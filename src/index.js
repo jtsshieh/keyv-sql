@@ -63,6 +63,10 @@ class KeyvSql extends EventEmitter {
 		}
 		return this.query(upsert);
 	}
+	
+	getAll() {
+		return this.query(this.entry.select().toString())
+	}
 
 	delete(key) {
 		const select = this.entry.select().where({ key }).toString();
